@@ -1,0 +1,28 @@
+@media screen and (min-width: 450px) {
+  header, body {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #restaurant-img, #restaurant-cuisine {
+    width: 70%;
+    margin: 0 15%;
+  }
+  #reviews-list li {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  #reviews-list li p:nth-of-type(3) {
+     width: 30%;
+     margin: 1em 62% 1em 8%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #reviews-list li p:nth-of-type(3) {
+     width: 22%;
+     margin: 1em 70% 1em 8%;
+  }
+}
