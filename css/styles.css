@@ -8,8 +8,8 @@ body,td,th,p{
 	line-height: 1.5;
 }
 body {
-	background-color: #fdfdfd;
-	margin: 0;
+  background-color: #fdfdfd;
+  margin: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -64,7 +64,7 @@ header {
 nav {
   width: 100%;
   height: 80px;
-  background-color: #252831;
+  background-color: orange;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,14 +132,14 @@ nav a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
-  background-color: #3397DB;
+  background-color: #f3f3f3;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 20px 0;
 }
 .filter-options h2 {
-  color: white;
+  color: black;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
@@ -170,11 +170,10 @@ nav a {
 }
 #restaurants-list li {
   background-color: #fff;
-  border: 2px solid #ccc;
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
-  height: 450px;
+  height: 430px;
   width: 270px;
   font-family: Arial,sans-serif;
   color: #f18200;
@@ -292,7 +291,6 @@ nav a {
 #reviews-list li {
   background-color: #fff;
   border: 2px solid #f3f3f3;
-  border-radius: 40px 0;
   list-style-type: none;
   margin: 2em auto;
   overflow: hidden;
@@ -307,7 +305,7 @@ nav a {
 #reviews-list li p:nth-of-type(1) {
    width: 41%;
    order: 0;
-   background-color: #4f4f4f;
+   background-color: #333;
    color: #fff;
    padding: 1em 0 1em 9%;
 }
@@ -315,7 +313,7 @@ nav a {
    width: 42%;
    order: 1;
    text-align: right;
-   background-color: #4f4f4f;
+   background-color: #333;
    color: #cbcbcb;
    padding: 1em 8% 1em 0;
 }
@@ -346,4 +344,7 @@ nav a {
 #restaurant-hours {
   margin: 0 auto 1.5em;
   text-align: center;
+}
+#restaurant-hours td {
+  vertical-align: top;
 }
