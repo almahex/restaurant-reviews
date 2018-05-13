@@ -39,6 +39,9 @@ h2, h3, h4, h5, h6 {
   background-color: #f3f3f3;
   min-height: 100%;
 }
+.restaurant-main {
+  padding-top: 6.5em;
+}
 #footer {
   background-color: #444;
   color: #aaa;
@@ -220,6 +223,7 @@ nav a {
 #map-container {
   width: 100%;
   order: 0;
+  padding-top: 6em;
 }
 .map-reviews {
   padding-top: 12.5em;

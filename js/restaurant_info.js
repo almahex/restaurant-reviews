@@ -1,9 +1,8 @@
 let restaurant;
 var map;
 
-/**
- * Initialize Google map, called from HTML.
- */
+//Create the instance of the google map add the call the function
+//to add the marker of the restaurant's location in its map
 window.initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
     if (error) { // Got an error!
@@ -20,9 +19,8 @@ window.initMap = () => {
   });
 }
 
-/**
- * Get current restaurant from page URL.
- */
+//Get restaurant by current id by using the function getParameterByName
+//and call fillRestaurantHTML to fill in all the restaurant's details
 fetchRestaurantFromURL = (callback) => {
   if (self.restaurant) { // restaurant already fetched!
     callback(null, self.restaurant)
@@ -45,9 +43,8 @@ fetchRestaurantFromURL = (callback) => {
   }
 }
 
-/**
- * Create restaurant HTML and add it to the webpage
- */
+//Gets all the information of the restaurant and adds it to the 
+//restaurant's page
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
@@ -58,6 +55,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.sizes = "70vw";
   image.srcset = `img/${restaurant.id}_400.jpg 400w, img/${restaurant.id}_600.jpg 600w`;
+  image.alt = `${restaurant.description}`;
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -70,9 +68,8 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   fillReviewsHTML();
 }
 
-/**
- * Create restaurant operating hours HTML table and add it to the webpage.
- */
+//Create a table for all the opening days and hours and add it to the
+//restaurant's details webpage
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
   for (let key in operatingHours) {
@@ -90,9 +87,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
   }
 }
 
-/**
- * Create all reviews HTML and add them to the webpage.
- */
+//Create all the reviews that the restaurant has by calling the
+//createReviewHTML and and add them to the Restaurant's info page
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
@@ -112,11 +108,10 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   container.appendChild(ul);
 }
 
-/**
- * Create review HTML and add it to the webpage.
- */
+//Create each review of a restaurant
 createReviewHTML = (review) => {
   const li = document.createElement('li');
+  li.setAttribute("aria-label",`Review from ${review.name} on ${review.date}`);
   const name = document.createElement('p');
   name.innerHTML = review.name;
   li.appendChild(name);
@@ -136,9 +131,8 @@ createReviewHTML = (review) => {
   return li;
 }
 
-/**
- * Add restaurant name to the breadcrumb navigation menu
- */
+//Add the name of the actual restaurant to the breadcrumb in
+//order to show the correct navigation
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
@@ -146,9 +140,8 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   breadcrumb.appendChild(li);
 }
 
-/**
- * Get a parameter by name from page URL.
- */
+//Returns the parameter found by giving a name and a url
+//using a reggex
 getParameterByName = (name, url) => {
   if (!url)
     url = window.location.href;
