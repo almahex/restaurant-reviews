@@ -53,6 +53,15 @@ h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+.view-source {
+  width: 40%;
+  color: #4183c4;
+  font-weight: 300;
+  text-decoration: none;
+  margin: 1.3em 0 0;
+  padding: 1em 0 0;
+}
+
 /* ====================== Navigation ====================== */
 header, main {
   width: 100%;
